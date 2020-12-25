@@ -15,6 +15,7 @@ import org.opencv.core.Mat;
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.PWM;
 import edu.wpi.first.wpilibj.PWMSpeedController;
+import edu.wpi.first.wpilibj.PWMTalonSRX;
 import edu.wpi.first.wpilibj.PWMVictorSPX;
 import edu.wpi.first.wpilibj.SpeedController;
 import edu.wpi.first.wpilibj.SpeedControllerGroup;
@@ -27,14 +28,14 @@ import frc.robot.commands.DriverControl;
 public class DriveTrain extends SubsystemBase {
 
   
-  //private TalonSRX motorLeft_1 = new TalonSRX(Constants.MOTOR_LEFT_1_ID);
-  //private TalonSRX motorLeft_2 = new TalonSRX(Constants.MOTOR_LEFT_2_ID);
-  //private TalonSRX motorRight_1 = new TalonSRX(Constants.MOTOR_RIGHT_1_ID);
-  //private TalonSRX motorRight_2 = new TalonSRX(Constants.MOTOR_RIGHT_2_ID);
-  //private SpeedControllerGroup motorLeft = new SpeedControllerGroup(motorLeft_1, motorLeft2);
-  //private SpeedControllerGroup motorRight = new SpeedControllerGroup(motorRight_1, motorRight_2);
-  private SpeedController motorLeft = new PWMVictorSPX(Constants.MOTOR_LEFT);
-  private SpeedController motorRight = new PWMVictorSPX(Constants.MOTOR_RIGHT);
+  private PWMTalonSRX motorLeft_1 = new PWMTalonSRX(Constants.MOTOR_LEFT_1_ID);
+  private PWMTalonSRX motorLeft_2 = new PWMTalonSRX(Constants.MOTOR_LEFT_2_ID);
+  private PWMTalonSRX motorRight_1 = new PWMTalonSRX(Constants.MOTOR_RIGHT_1_ID);
+  private PWMTalonSRX motorRight_2 = new PWMTalonSRX(Constants.MOTOR_RIGHT_2_ID);
+  private SpeedControllerGroup motorLeft = new SpeedControllerGroup(motorLeft_1, motorLeft_2);
+  private SpeedControllerGroup motorRight = new SpeedControllerGroup(motorRight_1, motorRight_2);
+  //private SpeedController motorLeft = new PWMVictorSPX(Constants.MOTOR_LEFT);
+  //private SpeedController motorRight = new PWMVictorSPX(Constants.MOTOR_RIGHT);
   private DifferentialDrive drive = new DifferentialDrive(motorLeft, motorRight);
   
 

@@ -29,56 +29,6 @@ public class DriverControl extends CommandBase {
 
   @Override
   public void execute() {
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    
     leftStickX = Robot.robotContainer.GetJoystcikRawAxis(Constants.LEFT_STICK_X);
     leftStickY = Robot.robotContainer.GetJoystcikRawAxis(Constants.LEFT_STICK_Y);
     RobotContainer.driveTrain.manualDrive(leftStickY, leftStickX);

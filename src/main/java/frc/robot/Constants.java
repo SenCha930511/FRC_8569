@@ -10,15 +10,15 @@ package frc.robot;
 public final class Constants {
 
     // ** 速度大小 ** //
-    public static final double SPEED_SCALE = 0.5;  //速度乘以的倍數
+    public static final double SPEED_SCALE = 0.7;  //速度乘以的倍數
 
     // ** 馬達 ** //
-    //public static final int MOTOR_LEFT_1_ID = 0;  //左馬達 1
-    //public static final int MOTOR_LEFT_2_ID = 1;  //左馬達 2
-    //public static final int MOTOR_RIGHT_1_ID = 2;  //右馬達 1
-    //public static final int MOTOR_RIGHT_2_ID = 3;  //左馬達 2
-    public static final int MOTOR_LEFT = 0;  //左馬達
-    public static final int MOTOR_RIGHT = 1;  //右馬達
+    public static final int MOTOR_LEFT_1_ID = 0;  //左馬達 1
+    public static final int MOTOR_LEFT_2_ID = 1;  //左馬達 2
+    public static final int MOTOR_RIGHT_1_ID = 2;  //右馬達 1
+    public static final int MOTOR_RIGHT_2_ID = 3;  //左馬達 2
+    //public static final int MOTOR_LEFT = 0;  //左馬達
+    //public static final int MOTOR_RIGHT = 1;  //右馬達
     
     // ** 搖桿 ** //
     public static final int JOYSTICK_1_ID = 0;  //羅技
