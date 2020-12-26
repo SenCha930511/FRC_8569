@@ -28,10 +28,8 @@ public class TestCommand extends CommandBase {
   // Called every time the scheduler runs while the command is scheduled.
   @Override
   public void execute() {
-    while (Constants.turn){
-      RobotContainer.driveTrain.setLeftMotors(0.2);
-      RobotContainer.driveTrain.setRightMotors(-0.2);
-  }
+    RobotContainer.driveTrain.setLeftMotors(0.2);
+    RobotContainer.driveTrain.setRightMotors(-0.2);
   }
 
   // Called once the command ends or is interrupted.

@@ -9,8 +9,6 @@ package frc.robot;
 
 public final class Constants {
 
-    public static final boolean turn = true;
-
     // ** 速度大小 ** //
     public static final double SPEED_SCALE = 0.7;  //速度乘以的倍數
 
