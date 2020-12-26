@@ -28,7 +28,7 @@ public class RobotContainer {
 
   private Joystick joystick_1 = new Joystick(Constants.JOYSTICK_1_ID);
   private Joystick joystick_2 = new Joystick(Constants.JOYSTICK_2_ID);
-  private JoystickButton button_1 = new JoystickButton(joystick_2, Constants.ARDUINO_BUTTON_1);
+  private JoystickButton button_1 = new JoystickButton(joystick_1, Constants.BUTTON_A);
   public static final DriveTrain driveTrain = new DriveTrain();
   private final DriverControl drivercommand = new DriverControl();
 
@@ -52,7 +52,7 @@ public class RobotContainer {
    * {@link edu.wpi.first.wpilibj2.command.button.JoystickButton}.
    */
   private void configureButtonBindings() {
-    button_1.whenHeld(new TestCommand());
+    button_1.whenPressed(new TestCommand());
   }
 
 

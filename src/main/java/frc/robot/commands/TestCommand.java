@@ -8,6 +8,7 @@
 package frc.robot.commands;
 
 import edu.wpi.first.wpilibj2.command.CommandBase;
+import frc.robot.Constants;
 import frc.robot.RobotContainer;
 
 public class TestCommand extends CommandBase {
@@ -27,8 +28,10 @@ public class TestCommand extends CommandBase {
   // Called every time the scheduler runs while the command is scheduled.
   @Override
   public void execute() {
-    RobotContainer.driveTrain.setLeftMotors(0.3);
-    RobotContainer.driveTrain.setRightMotors(-0.3);
+    while (Constants.turn){
+      RobotContainer.driveTrain.setLeftMotors(0.2);
+      RobotContainer.driveTrain.setRightMotors(-0.2);
+  }
   }
 
   // Called once the command ends or is interrupted.
