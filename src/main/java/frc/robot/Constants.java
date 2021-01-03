@@ -10,7 +10,7 @@ package frc.robot;
 public final class Constants {
 
     // ** 速度大小 ** //
-    public static final double SPEED_SCALE = 0.7;  //速度乘以的倍數
+    public static final double SPEED_SCALE = 0.5;  //速度乘以的倍數
 
     // ** 馬達 ** //
     public static final int MOTOR_LEFT_1_ID = 0;  //左馬達 1
@@ -23,6 +23,7 @@ public final class Constants {
     // ** 搖桿 ** //
     public static final int JOYSTICK_1_ID = 0;  //羅技
     public static final int JOYSTICK_2_ID = 1;  //Arduino
+    public static final int JOYSTICK_3_ID = 2;  //Extreme 3D
     
     // ** 羅技搖桿控制器 - 軸 ** //
     public static final int LEFT_STICK_X = 0;  //左蘑菇頭 X 軸
@@ -41,4 +42,9 @@ public final class Constants {
     // **Arduino搖桿 - 按鈕 ** // 
     public static final int ARDUINO_BUTTON_1 = 1;
     public static final int ARDUINO_BUTTON_2 = 2;
+
+    // ** Extreme 3D Pro 搖桿 - 軸**/
+    public static final int X_AXIS = 0;  //X 軸
+    public static final int Y_AXIS = 1;  //Y 軸
+    public static final int SLIDER = 3;  //+ -
 }
