@@ -34,7 +34,7 @@ import frc.robot.subsystems.DriveTrain;
 public class Robot extends TimedRobot {
   public static RobotContainer robotContainer = new RobotContainer();
   private Command m_autonomousCommand;
-  private UsbCamera camera = CameraServer.getInstance().startAutomaticCapture(0);
+  private UsbCamera camera = CameraServer.getInstance().startAutomaticCapture();
 
   /**
    * This function is run when the robot is first started up and should be used for any
