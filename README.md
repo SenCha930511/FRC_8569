@@ -8,3 +8,6 @@ Written by Java on Visual Studio Code
 
 2021/01/04
 > Create README.MD
+
+2021/01/03
+> Connect Line Bot to Github Project
