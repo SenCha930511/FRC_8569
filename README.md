@@ -2,7 +2,7 @@
 
 # FRC 8569 Java Code
 
-Written by Java on Visual Studio Code
+Written in Java on Visual Studio Code
 
 ## Update logs
 
