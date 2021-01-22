@@ -1,6 +1,6 @@
 ![FRC 8569 - Zenith Polaris](https://i.imgur.com/ZCfge8I.png)
 
-# FRC 8569 Java Code   FRC8569 Java 程式碼
+# FRC 8569 Java Code
 
 Written in Java on Visual Studio Code   使用 Java 在 Visual Studio Code 上撰寫
 
