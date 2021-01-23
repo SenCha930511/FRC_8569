@@ -24,28 +24,30 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 import frc.robot.Constants;
 import frc.robot.commands.DriverControl;
+import com.ctre.phoenix.motorcontrol.can.WPI_TalonSRX;
 
 public class DriveTrain extends SubsystemBase {
 
-  
-  private PWMTalonSRX motorLeft_1 = new PWMTalonSRX(Constants.MOTOR_LEFT_1_ID);
-  private PWMTalonSRX motorLeft_2 = new PWMTalonSRX(Constants.MOTOR_LEFT_2_ID);
-  private PWMTalonSRX motorRight_1 = new PWMTalonSRX(Constants.MOTOR_RIGHT_1_ID);
-  private PWMTalonSRX motorRight_2 = new PWMTalonSRX(Constants.MOTOR_RIGHT_2_ID);
-  private SpeedControllerGroup motorLeft = new SpeedControllerGroup(motorLeft_1, motorLeft_2);
-  private SpeedControllerGroup motorRight = new SpeedControllerGroup(motorRight_1, motorRight_2);
+
+  private WPI_TalonSRX motorLeft_1 = new WPI_TalonSRX(Constants.MOTOR_LEFT_1_ID);
+  private WPI_TalonSRX motorLeft_2 = new WPI_TalonSRX(Constants.MOTOR_LEFT_2_ID);
+  private WPI_TalonSRX motorRight_1 = new WPI_TalonSRX(Constants.MOTOR_RIGHT_1_ID);
+  private WPI_TalonSRX motorRight_2 = new WPI_TalonSRX(Constants.MOTOR_RIGHT_2_ID);
+  //private SpeedControllerGroup motorLeft = new SpeedControllerGroup(motorLeft_1, motorLeft_2);
+  //private SpeedControllerGroup motorRight = new SpeedControllerGroup(motorRight_1, motorRight_2);
   //private SpeedController motorLeft = new PWMVictorSPX(Constants.MOTOR_LEFT);
   //private SpeedController motorRight = new PWMVictorSPX(Constants.MOTOR_RIGHT);
-  private DifferentialDrive drive = new DifferentialDrive(motorLeft, motorRight);
+  private DifferentialDrive drive = new DifferentialDrive(motorLeft_1, motorRight_1);
   
 
   public DriveTrain() {
-
+    motorLeft_2.follow(motorLeft_1);
+    motorRight_2.follow(motorRight_1);
   }
 
   @Override
   public void periodic() {
-    // This method will be called once per scheduler run
+
   }
 
   public void manualDrive(double move, double turn){
@@ -61,19 +63,23 @@ public class DriveTrain extends SubsystemBase {
 
 
   public void setLeftMotors(double speed){
-    //motorLeft_1.setInverted(true); //設置數值相反
-    //motorLeft_2.setInverted(true);
-    //motorLeft_1.set(ControlMode.PercentOutput, speed);
-    //motorLeft_2.set(ControlMode.PercentOutput, speed);
-    motorLeft.setInverted(true);
-    motorLeft.set(speed);
+    /*
+    motorLeft_1.setInverted(true); //設置數值相反
+    motorLeft_2.setInverted(true);
+    motorLeft_1.set(ControlMode.PercentOutput, speed);
+    motorLeft_2.set(ControlMode.PercentOutput, speed);
+    */
+    motorLeft_1.setInverted(true);
+    motorLeft_1.set(ControlMode.PercentOutput, speed);
   }
 
 
   public void setRightMotors(double speed){
-    //motorRight_1.set(ControlMode.PercentOutput, speed);
-    //motorRight_2.set(ControlMode.PercentOutput, speed);
-    motorRight.set(speed);
+    /*
+    motorRight_1.set(ControlMode.PercentOutput, speed);
+    motorRight_2.set(ControlMode.PercentOutput, speed);
+    */
+    motorRight_1.set(ControlMode.PercentOutput, speed);
   }
 
 
