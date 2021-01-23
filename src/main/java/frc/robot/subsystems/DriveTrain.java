@@ -57,7 +57,7 @@ public class DriveTrain extends SubsystemBase {
     if (Math.abs(turn) < 0.10){
       turn = 0;
     }
-    drive.arcadeDrive(move * Constants.SPEED_SCALE, turn * Constants.SPEED_SCALE);
+    drive.arcadeDrive(-move * Constants.SPEED_SCALE, -turn * Constants.SPEED_SCALE);
     SmartDashboard.putNumber("Robot_Speed", move);
   }
 
