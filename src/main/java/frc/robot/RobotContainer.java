@@ -12,6 +12,8 @@ import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.XboxController;
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.button.JoystickButton;
+import edu.wpi.first.wpilibj.DoubleSolenoid;
+import edu.wpi.first.wpilibj.Compressor;
 import frc.robot.commands.DriverControl;
 import frc.robot.commands.TestCommand;
 import frc.robot.subsystems.DriveTrain;
@@ -29,6 +31,8 @@ public class RobotContainer {
   private Joystick joystick_1 = new Joystick(Constants.JOYSTICK_1_ID);
   private Joystick joystick_2 = new Joystick(Constants.JOYSTICK_2_ID);
   private Joystick joystick_3 = new Joystick(Constants.JOYSTICK_3_ID);
+  private JoystickButton button_a  = new JoystickButton(joystick_1, Constants.BUTTON_A);
+  private JoystickButton button_x  = new JoystickButton(joystick_1, Constants.BUTTON_X);
   private JoystickButton button_1 = new JoystickButton(joystick_2, Constants.ARDUINO_BUTTON_1);
   public static final DriveTrain driveTrain = new DriveTrain();
   private final DriverControl drivercommand = new DriverControl();

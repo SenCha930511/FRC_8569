@@ -23,6 +23,9 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.CommandScheduler;
 import edu.wpi.first.wpilibj2.command.button.JoystickButton;
+import edu.wpi.first.wpilibj.DoubleSolenoid;
+import edu.wpi.first.wpilibj.Solenoid;
+import edu.wpi.first.wpilibj.Compressor;
 import frc.robot.subsystems.DriveTrain;
 
 /**
@@ -33,8 +36,16 @@ import frc.robot.subsystems.DriveTrain;
  */
 public class Robot extends TimedRobot {
   public static RobotContainer robotContainer = new RobotContainer();
+  private Joystick joystick_1 = new Joystick(Constants.JOYSTICK_1_ID);
+  private Joystick joystick_2 = new Joystick(Constants.JOYSTICK_2_ID);
+  private Joystick joystick_3 = new Joystick(Constants.JOYSTICK_3_ID);
+  private JoystickButton button_a  = new JoystickButton(joystick_1, Constants.BUTTON_A);
+  private JoystickButton button_x  = new JoystickButton(joystick_1, Constants.BUTTON_X);
   private Command m_autonomousCommand;
   private UsbCamera camera = CameraServer.getInstance().startAutomaticCapture();
+  private DoubleSolenoid ds = new DoubleSolenoid(0, 0, 1);
+  //private Solenoid ss = new So
+  private Compressor compressor = new Compressor();
 
   /**
    * This function is run when the robot is first started up and should be used for any
@@ -63,6 +74,19 @@ public class Robot extends TimedRobot {
     // and running subsystem periodic() methods.  This must be called from the robot's periodic
     // block in order for anything in the Command-based framework to work.
     CommandScheduler.getInstance().run();
+    compressor.start();
+    compressor.setClosedLoopControl(true);
+    if (button_a.get()){
+      ds.set(DoubleSolenoid.Value.kForward);
+      
+      System.out.println("A was pressed");
+    }
+    if (button_x.get()){
+      ds.set(DoubleSolenoid.Value.kReverse);
+      //compressor.setClosedLoopControl(false);
+      System.out.println("X was pressed");
+    }
+    ds.set(DoubleSolenoid.Value.kOff);
   }
 
   /**
