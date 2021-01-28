@@ -44,7 +44,7 @@ public class Robot extends TimedRobot {
   private Command m_autonomousCommand;
   private UsbCamera camera = CameraServer.getInstance().startAutomaticCapture();
   private DoubleSolenoid ds = new DoubleSolenoid(0, 0, 1);
-  //private Solenoid ss = new So
+  //private Solenoid ss = new Solenoid(0);
   private Compressor compressor = new Compressor();
 
   /**
@@ -74,19 +74,17 @@ public class Robot extends TimedRobot {
     // and running subsystem periodic() methods.  This must be called from the robot's periodic
     // block in order for anything in the Command-based framework to work.
     CommandScheduler.getInstance().run();
-    compressor.start();
-    compressor.setClosedLoopControl(true);
     if (button_a.get()){
-      ds.set(DoubleSolenoid.Value.kForward);
-      
+      //ds.set(DoubleSolenoid.Value.kForward);
+      compressor.start();
       System.out.println("A was pressed");
     }
     if (button_x.get()){
-      ds.set(DoubleSolenoid.Value.kReverse);
-      //compressor.setClosedLoopControl(false);
+      //ds.set(DoubleSolenoid.Value.kReverse);
+      compressor.stop();
       System.out.println("X was pressed");
     }
-    ds.set(DoubleSolenoid.Value.kOff);
+    //ds.set(DoubleSolenoid.Value.kOff);
   }
 
   /**
