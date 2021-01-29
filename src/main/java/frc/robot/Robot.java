@@ -27,6 +27,7 @@ import edu.wpi.first.wpilibj.DoubleSolenoid;
 import edu.wpi.first.wpilibj.Solenoid;
 import edu.wpi.first.wpilibj.Compressor;
 import frc.robot.subsystems.DriveTrain;
+import frc.robot.subsystems.PneumaticsSubsystem;
 
 /**
  * The VM is configured to automatically run this class, and to call the functions corresponding to
@@ -39,14 +40,10 @@ public class Robot extends TimedRobot {
   private Joystick joystick_1 = new Joystick(Constants.JOYSTICK_1_ID);
   private Joystick joystick_2 = new Joystick(Constants.JOYSTICK_2_ID);
   private Joystick joystick_3 = new Joystick(Constants.JOYSTICK_3_ID);
-  private JoystickButton button_a  = new JoystickButton(joystick_1, Constants.BUTTON_A);
-  private JoystickButton button_x  = new JoystickButton(joystick_1, Constants.BUTTON_X);
   private Command m_autonomousCommand;
   private UsbCamera camera = CameraServer.getInstance().startAutomaticCapture();
-  private DoubleSolenoid ds = new DoubleSolenoid(0, 0, 1);
-  //private Solenoid ss = new Solenoid(0);
-  private Compressor compressor = new Compressor();
-
+  public static final PneumaticsSubsystem pneumaticsub = new PneumaticsSubsystem();
+  
   /**
    * This function is run when the robot is first started up and should be used for any
    * initialization code.
@@ -74,17 +71,12 @@ public class Robot extends TimedRobot {
     // and running subsystem periodic() methods.  This must be called from the robot's periodic
     // block in order for anything in the Command-based framework to work.
     CommandScheduler.getInstance().run();
-    if (button_a.get()){
-      //ds.set(DoubleSolenoid.Value.kForward);
-      compressor.start();
-      System.out.println("A was pressed");
+    if (joystick_1.getRawButton(Constants.BUTTON_A)){
+      pneumaticsub.forward();
     }
-    if (button_x.get()){
-      //ds.set(DoubleSolenoid.Value.kReverse);
-      compressor.stop();
-      System.out.println("X was pressed");
+    if (joystick_1.getRawButton(Constants.BUTTON_X)){
+      pneumaticsub.reverse();
     }
-    //ds.set(DoubleSolenoid.Value.kOff);
   }
 
   /**

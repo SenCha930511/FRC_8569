@@ -4,12 +4,12 @@
 
 package frc.robot.subsystems;
 
+import edu.wpi.first.wpilibj.Solenoid;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 
 public class PneumaticsSubsystem extends SubsystemBase {
 
-  private DoubleSolenoid ds = new DoubleSolenoid(0, 1);
-  private Compressor compressor = new Compressor();
+  private Solenoid ss = new Solenoid(0);
 
   public PneumaticsSubsystem() {
 
@@ -21,14 +21,11 @@ public class PneumaticsSubsystem extends SubsystemBase {
   }
 
   public void forward(){
-    ds.set(DoubleSolenoid.Value.kForward);
+    ss.set(true);
   }
   
   public void reverse(){
-    ds.set(DoubleSolenoid.Value.kReverse);
+    ss.set(false);
   }
   
-  public void off(){
-    ds.set(DoubleSolenoid.Value.kOff);
-  }
 }
