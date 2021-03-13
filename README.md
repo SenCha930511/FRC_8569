@@ -6,6 +6,9 @@ Written in Java on Visual Studio Code   使用 Java 在 Visual Studio Code 上�
 
 ## Update logs   更新日誌
 
+2021/03/13
+> Update for ColorSensorV3 and navX   新增ColorSensorV3 & navX程式
+
 2021/02/08
 > Update for Encoder   新增編碼器程式
 
