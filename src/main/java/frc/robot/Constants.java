@@ -19,6 +19,7 @@ public final class Constants {
     public static final int MOTOR_RIGHT_2_ID = 3;  //左馬達 2
     //public static final int MOTOR_LEFT = 0;  //左馬達
     //public static final int MOTOR_RIGHT = 1;  //右馬達
+    public static final int MOTOR_SHOOTING_ID = 1;
     
     // ** 搖桿 ** //
     public static final int JOYSTICK_1_ID = 0;  //羅技
