@@ -15,6 +15,7 @@ import edu.wpi.first.wpilibj2.command.button.JoystickButton;
 import edu.wpi.first.wpilibj.DoubleSolenoid;
 import edu.wpi.first.wpilibj.Compressor;
 import frc.robot.commands.DriverControl;
+import frc.robot.commands.Shooting;
 import frc.robot.commands.TestCommand;
 import frc.robot.subsystems.DriveTrain;
 
@@ -33,6 +34,7 @@ public class RobotContainer {
   private Joystick joystick_3 = new Joystick(Constants.JOYSTICK_3_ID);
   private JoystickButton button_a  = new JoystickButton(joystick_1, Constants.BUTTON_A);
   private JoystickButton button_x  = new JoystickButton(joystick_1, Constants.BUTTON_X);
+  private JoystickButton button_y  = new JoystickButton(joystick_1, Constants.BUTTON_Y);
   private JoystickButton button_1 = new JoystickButton(joystick_2, Constants.ARDUINO_BUTTON_1);
   public static final DriveTrain driveTrain = new DriveTrain();
   private final DriverControl drivercommand = new DriverControl();
@@ -57,6 +59,7 @@ public class RobotContainer {
    */
   private void configureButtonBindings() {
     //button_1.whenHeld(new TestCommand());
+    button_y.whenHeld(new Shooting());
   }
 
 
