@@ -32,9 +32,8 @@ Written in Java on Visual Studio Code   使用 Java 在 Visual Studio Code 上�
 
 ## Resources   資源
 
-Command Base Framework tutorial  Command 架構
+Command Base Framework tutorial   Command 架構
 > https://sencha.xyz/java_tutorial_1
-> 
 > https://sencha.xyz/java_tutorial_2
 > https://sencha.xyz/java_tutorial_3
 
