@@ -34,8 +34,10 @@ Written in Java on Visual Studio Code   使用 Java 在 Visual Studio Code 上�
 
 Command Base Framework tutorial   Command 架構
 > https://sencha.xyz/java_tutorial_1
->  https://sencha.xyz/java_tutorial_2
->   https://sencha.xyz/java_tutorial_3
+
+> https://sencha.xyz/java_tutorial_2
+
+> https://sencha.xyz/java_tutorial_3
 
 Spark Max examples   Spark Max 程式範例
 > https://sencha.xyz/sparkmax
