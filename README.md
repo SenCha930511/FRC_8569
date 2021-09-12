@@ -1,8 +1,8 @@
 ![FRC 8569 - Zenith Polaris](https://i.imgur.com/ZCfge8I.png)
 
-[![forthebadge](https://forthebadge.com/images/badges/made-with-java.svg)](https://forthebadge.com)
-
 # FRC 8569 Java Code
+
+[![forthebadge](https://forthebadge.com/images/badges/made-with-java.svg)](https://forthebadge.com)
 
 Written in Java on Visual Studio Code   使用 Java 在 Visual Studio Code 上撰寫
 
