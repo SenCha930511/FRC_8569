@@ -1,6 +1,6 @@
 ![FRC 8569 - Zenith Polaris](https://i.imgur.com/ZCfge8I.png)
 
-[![forthebadge](https://forthebadge.com/images/badges/made-with-python.svg)](https://forthebadge.com)
+[![forthebadge](https://forthebadge.com/images/badges/made-with-java.svg)](https://forthebadge.com)
 
 # FRC 8569 Java Code
 
